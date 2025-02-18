@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Font links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Title -->
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  
+  <!-- Boxicons -->
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</head>
+<body>
+
+  <main>
+
+    <!-- Newsletter image start -->
+    <section id="newsletterImage">
+
+      <picture>
+        <source media="(min-width: 35rem)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="Illustration of a person signing up for a newsletter">
+      </picture>
+
+    </section>
+    <!-- Newsletter image end -->
+
+    <!-- Newsletter text start -->
+    <section id="newsletterText">
+      <h1>Stay Updated!</h1>
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+      <ul>
+        <li><box-icon name='check-circle' type='solid' color='#ff6257' ></box-icon>Product discovery and building what matters</li>
+        <li><box-icon name='check-circle' type='solid' color='#ff6257' ></box-icon>Measuring to ensure updates are a success</li>
+        <li><box-icon name='check-circle' type='solid' color='#ff6257' ></box-icon>And much more!</li>
+      </ul>
+      <!-- Newsletter text end -->
+
+      <!-- Sign-up form start -->
+      <form novalidate action="submit">
+        <div id="inputContainer">
+          <label for="email" aria-label="Email address">Email address</label>
+          <input type="email" id="email" name="email" placeholder="email@company.com" required aria-required="true">
+        </div>
+        <button type="submit" aria-label="Subscribe to monthly newsletter">Subscribe to monthly newsletter</button>
+      </form>
+      <!-- Sign-up form end -->
+
+    </section>
+    
+  </main>
+
+  <!-- Success message start -->
+  <div id="overlay">
+    <div id="successContainer">
+      <box-icon name='check'></box-icon>
+      <h1>Thaks for subscribing!</h1>
+      <p>
+        A confirmation email has been sent to ash@loremcompany.com.
+        <br>
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+
+      <button>Dismiss message</button>
+    </div>
+  </div>
+  <!-- Success message end -->
+
+</body>
+</html>
