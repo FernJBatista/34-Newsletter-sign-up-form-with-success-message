@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://your-solution-url.com)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/FernJBatista/34-Newsletter-sign-up-form-with-success-message)
+- Live Site URL: [Live Site](https://fernjbatista.github.io/34-Newsletter-sign-up-form-with-success-message/)
 
 ## My process
 
