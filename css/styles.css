@@ -174,6 +174,7 @@ body {
 }
 
 main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,18 +273,29 @@ main section#newsletterText form #inputContainer input {
   transition: all 0.2s ease-in-out;
 }
 main section#newsletterText form #inputContainer input:invalid {
-  border-color: var(--Red);
-  box-shadow: rgba(255, 98, 87, 0.1882352941) 0 0 0.5rem 0.1rem;
+  color: var(--Red);
+  box-shadow: none;
 }
 main section#newsletterText form #inputContainer input:invalid:focus {
   outline: none;
-  border-color: var(--Blue700);
-  box-shadow: rgba(36, 39, 66, 0.1254901961) 0 0 0.5rem 0.1rem;
+  border-color: var(--Red);
+  box-shadow: rgba(255, 98, 87, 0.1882352941) 0 0 0.5rem 0.1rem;
+}
+main section#newsletterText form #inputContainer input .error {
+  width: 100%;
+  padding: 0;
+  font-size: 80%;
+  color: var(--Red);
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+main section#newsletterText form #inputContainer input .error.active {
+  padding: 0.3rem;
 }
 main section#newsletterText form #inputContainer input:hover {
   outline: none;
-  border-color: var(--Blue700);
-  box-shadow: rgba(36, 39, 66, 0.1254901961) 0 0 0.5rem 0.1rem;
+  border-color: var(--Red);
+  box-shadow: rgba(255, 98, 87, 0.1882352941) 0 0 0.5rem 0.1rem;
 }
 main section#newsletterText form button {
   display: flex;
@@ -300,9 +312,85 @@ main section#newsletterText form button {
   cursor: pointer;
 }
 main section#newsletterText form button:hover {
-  background-color: var(--Blue700);
+  background-color: #ff6257;
+  background-color: linear-gradient(90deg, rgb(255, 98, 87) 0%, rgb(255, 156, 87) 100%);
+  box-shadow: rgba(255, 98, 87, 0.2078431373) 0 4px 8px 4px;
 }
 
-div#overlay {
+#overlay {
+  position: absolute;
+  z-index: 10;
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+#overlay.active {
+  display: flex;
+  background-color: #242742;
+}
+#overlay #successContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 45rem;
+  background-color: var(--White);
+  padding: 2rem;
+  height: 100%;
+}
+@media screen and (min-width: 45rem) {
+  #overlay #successContainer {
+    height: auto;
+    border-radius: 1.5rem;
+    width: -moz-min-content;
+    width: min-content;
+    min-width: 24rem;
+    max-width: 28rem;
+  }
+}
+#overlay #successContainer #successMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+@media screen and (min-width: 45rem) {
+  #overlay #successContainer #successMessage {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 45rem) {
+  #overlay #successContainer #successMessage h1 {
+    font-size: clamp(2.5rem, 2.5vw, 4rem);
+    letter-spacing: 0.05rem;
+  }
+}
+#overlay #successContainer #successMessage p strong {
+  font-weight: 700;
+}
+@media screen and (min-width: 45rem) {
+  #overlay #successContainer #successMessage p {
+    max-width: 32ch;
+  }
+}
+#overlay #successContainer button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 1rem;
+  color: var(--White);
+  background-color: var(--Blue800);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#overlay #successContainer button:hover {
+  background-color: #ff6257;
+  background-color: linear-gradient(90deg, rgb(255, 98, 87) 0%, rgb(255, 156, 87) 100%);
+  box-shadow: rgba(255, 98, 87, 0.2078431373) 0 4px 8px 4px;
 }/*# sourceMappingURL=styles.css.map */

@@ -19,6 +19,8 @@
   <!-- Boxicons -->
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
+  <!-- Form validation script -->
+  <script src="./index.js"></script>
 </head>
 <body>
 
@@ -48,10 +50,11 @@
       <!-- Newsletter text end -->
 
       <!-- Sign-up form start -->
-      <form novalidate action="submit">
+      <form id="form" novalidate>
         <div id="inputContainer">
           <label for="email" aria-label="Email address">Email address</label>
-          <input type="email" id="email" name="email" placeholder="email@company.com" required aria-required="true">
+          <input type="email" id="email" name="email" placeholder="email@company.com" minlength="4" required aria-required="true">
+          <span class="error" aria-live="polite"></span>
         </div>
         <button type="submit" aria-label="Subscribe to monthly newsletter">Subscribe to monthly newsletter</button>
       </form>
@@ -64,13 +67,14 @@
   <!-- Success message start -->
   <div id="overlay">
     <div id="successContainer">
-      <box-icon name='check'></box-icon>
-      <h1>Thaks for subscribing!</h1>
+      <div id="successMessage">
+        <box-icon name='check-circle' type='solid' color='#ff6257' size="4rem"></box-icon>
+      <h1>Thanks for subscribing!</h1>
       <p>
-        A confirmation email has been sent to ash@loremcompany.com.
-        <br>
+        A confirmation email has been sent to <strong>ash@loremcompany.com</strong>.
         Please open it and click the button inside to confirm your subscription.
       </p>
+      </div>
 
       <button>Dismiss message</button>
     </div>
